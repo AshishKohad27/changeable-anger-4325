@@ -10,7 +10,7 @@ import { Link, NavLink } from "react-router-dom";
 import React from "react";
 
 const links = [{ path: "/", title: "Home" },
-{ path: "/login", title: "Login" },
+{ path: "/signin", title: "Signin" },
 { path: "/singup", title: "Singup" },
 { path: "/contactsale", title: "Contact Sales" },
 { path: "/allproduct", title: "Products" },
@@ -29,7 +29,11 @@ export default function Navbar() {
     };
 
     return (
-        <Flex minWidth="max-content" alignItems="center" gap="2">
+        <Flex minWidth="max-content" alignItems="center" gap="2" 
+        maxW="1348px" 
+        m="auto"
+        className="NavbarSignin"
+        >
             <Box p="2">
                 <Heading size="md">Chakra App</Heading>
             </Box>

@@ -1,0 +1,112 @@
+.block_01 {
+  width: auto;
+  height: 1400px;
+  margin: auto;
+  background-image: linear-gradient(
+    30deg,
+    rgba(126, 6, 78, 0.75) 0%,
+    rgba(32, 32, 32, 1) 50%,
+    rgba(234, 42, 94, 1) 90%
+  );
+}
+.block_1 {
+  height: auto;
+  width: 98%;
+  margin: auto;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(
+    30deg,
+    rgba(88, 2, 54, 0.75) 0%,
+    rgba(32, 32, 32, 1) 50%,
+    rgb(131, 23, 52) 90%
+  );
+  /* background-color: #282c34; */
+}
+.block_11 {
+  width: 900px;
+  height: 422px;
+  /* background-color: teal; */
+  margin: auto;
+}
+.block_11 > div:nth-child(1) {
+  width: 870px;
+  height: 140px;
+  margin: auto;
+  margin: 45px auto;
+  /* background-color: olive; */
+}
+.block_11 h1 {
+  width: 100%;
+  font-size: 56px;
+  color: #ffffff;
+}
+.block_11 > div:nth-child(2) {
+  width: 870px;
+  height: 52px;
+  /* background-color: aquamarine; */
+  margin: auto;
+  margin-bottom: 20px;
+}
+.block_11 > div:nth-child(2) > p {
+  /* background-color: aqua; */
+  margin: auto;
+  width: 550px;
+  font-size: 17px;
+  color: #eeeeee;
+}
+.block_11 > button {
+  width: 151px;
+  height: 52px;
+  background-color: #ec008c;
+  background-image: linear-gradient(to right, #f05a28, #ec008c, #f05a28);
+  transition: 0.5s;
+  font-size: 15px;
+  font-weight: bold;
+  color: #eeeeee;
+  /* padding: 18px 34px; */
+  /* transition-delay: 0.5s; */
+}
+.block_11 > button:hover {
+  transition: 0.5s;
+  background-color: white;
+  margin-top: -5px;
+  background-image: linear-gradient(to right, #f05a28, #ec008c, #f05a28);
+}
+.block_12 {
+  width: auto;
+  height: auto;
+  margin: auto;
+  /* background-color: aquamarine; */
+}
+.block_12 > div > div {
+  width: 674.5px;
+  height: 347px;
+  /* background-color: #f05a28; */
+}
+.block_12 > div > div:nth-child(1) > img {
+  width: 644.5px;
+  height: 334.66px;
+}
+.block_12 > div > div:nth-child(2) > img {
+  width: 592.16px;
+  height: 347px;
+}
+.block_13{
+    /* background-color: #f05a28; */
+  width: 1170px;
+    margin: auto
+}
+block_131{
+    width: 1170px;
+    height: 81.25px;
+}
+.block_131>div{
+    width: 228px;
+    height: 81.25px;
+    background-color: aliceblue;
+}
+
+@media screen {
+    
+}

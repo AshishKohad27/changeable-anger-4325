@@ -1,0 +1,91 @@
+.loginLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loginLeft input {
+  color: white;
+}
+.forgetBox {
+  color: #2ea0d6;
+  max-width: 323.75px;
+  height: 86.84px;
+  /* background-color: red; */
+  border-bottom: 1px solid #ffffff26;
+}
+.forgetBox > p {
+  margin-top: 20px;
+}
+.forgetBox > p:hover {
+  text-decoration: underline;
+  color: #2479a0;
+  cursor: pointer;
+}
+.loginLeft > img {
+  margin: auto;
+  margin-top: 40px;
+  max-width: 303px;
+  height: 63.15px;
+}
+.copyRight {
+  color: aliceblue;
+}
+
+.loginRight {
+  background-color: #000;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.loginRight > div:nth-child(1) {
+  width: 500px;
+  height: 700px;
+  max-height: 700px;
+}
+.loginRight > div:nth-child(1) > img {
+  width: 600px;
+  max-width: 600px;
+  min-width: 300px;
+  position: absolute;
+  right: 0px;
+}
+
+.loginRight > div:nth-child(2) > img {
+  position: absolute;
+  z-index: 10;
+  top: 170px;
+  left: 80px;
+  max-width: 498px;
+}
+.loginRight > div:nth-child(3) {
+  position: absolute;
+  z-index: 10;
+  bottom: 180px;
+  left: 80px;
+}
+.loginRight > div:nth-child(3) > button {
+  font-size: 14px;
+  padding: 12px 80px;
+  font-weight: bold;
+  color: white;
+  background-color: #ec008c;
+  background-image: linear-gradient(to right, #f05a28, #ec008c, #f05a28);
+}
+.loginRight > div:nth-child(4) {
+  position: absolute;
+  z-index: 10;
+  bottom: 50px;
+  right: 50px;
+}
+.loginRight > div:nth-child(4) > img {
+  max-width: 150px;
+  height: 34.43px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .loginRight {
+    background-color: red;
+    display: none;
+  }
+}
