@@ -1,0 +1,67 @@
+{
+  "courses": [
+    {
+      "title": "Basic of React",
+      "subject": "React",
+      "category": "Web development",
+      "creator": "by Ashish",
+      "duration": "4:05",
+      "level": "Beginner",
+      "update": "2018-06-27",
+      "rating": "4.5",
+      "about": "Basic of react ",
+      "whatYouWillLearn": "you learn all the things",
+      "id": 1
+    },
+    {
+      "title": "",
+      "subject": "",
+      "category": "",
+      "creator": "",
+      "duration": "",
+      "level": "",
+      "update": "",
+      "rating": "",
+      "about": "",
+      "whatYouWillLearn": "",
+      "authorImg": "",
+      "id": 2
+    }
+  ],
+  "credentials": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "email": "kohadashish27@gmail.com",
+      "username": "Ahsihs",
+      "password": "@ADShj12",
+      "id": 2
+    },
+    {
+      "email": "AshishKhuKOhad27@gmail.com",
+      "username": "Ashish#27",
+      "password": "a@1sKJDKSKJ",
+      "id": 3
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
