@@ -6,16 +6,18 @@ import Home from "../Pages/Home";
 import Signin from "../Pages/Signin";
 import PageNotFound from "../Pages/PageNotFound";
 import Signup from "../Pages/Signup";
+import Footer from "../Components/Footer";
 
 export default function AllRoutes(){
     return (
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/signin" element={<Signin/>}/>
-            <Route path="/singup" element={<Signup/>}/>
+            <Route path="/signup" element={<Signup/>}/>
             <Route path="/contactsale" element={<ContactSale/>}/>
             <Route path="/allproduct" element={<AllProduct/>}/> 
             <Route path="/form" element={<FormData/>}/>
+            <Route path="/footer" element={<Footer/>}/>
             <Route path="*" element={<PageNotFound/>}/>
         </Routes>
     )

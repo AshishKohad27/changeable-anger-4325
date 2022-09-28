@@ -11,10 +11,11 @@ import React from "react";
 
 const links = [{ path: "/", title: "Home" },
 { path: "/signin", title: "Signin" },
-{ path: "/singup", title: "Singup" },
+{ path: "/signup", title: "Singup" },
 { path: "/contactsale", title: "Contact Sales" },
 { path: "/allproduct", title: "Products" },
-{ path: "/form", title: "Forms Data" }
+{ path: "/form", title: "Forms Data" },
+{ path: "/footer", title: "Footer" }
 ];
 
 export default function Navbar() {
@@ -29,10 +30,10 @@ export default function Navbar() {
     };
 
     return (
-        <Flex minWidth="max-content" alignItems="center" gap="2" 
-        maxW="1348px" 
-        m="auto"
-        className="NavbarSignin"
+        <Flex minWidth="max-content" alignItems="center" gap="2"
+            maxW="1348px"
+            m="auto"
+            className="NavbarSignin"
         >
             <Box p="2">
                 <Heading size="md">Chakra App</Heading>

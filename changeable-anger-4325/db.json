@@ -28,6 +28,25 @@
       "id": 2
     }
   ],
+  "credentials": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "email": "kohadashish27@gmail.com",
+      "username": "Ahsihs",
+      "password": "@ADShj12",
+      "id": 2
+    },
+    {
+      "email": "AshishKhuKOhad27@gmail.com",
+      "username": "Ashish#27",
+      "password": "a@1sKJDKSKJ",
+      "id": 3
+    }
+  ],
   "posts": [
     {
       "id": 1,

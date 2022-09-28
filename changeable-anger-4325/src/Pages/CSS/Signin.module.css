@@ -83,6 +83,17 @@
   height: 34.43px;
 }
 
+.passwordAuth>h3{
+    /* background-color: #2479a0; */
+    color: white;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.passwordAuth>ul>li{
+    text-align: left;
+}
+
 @media screen and (min-width: 0px) and (max-width: 800px) {
   .loginRight {
     background-color: red;

@@ -13,6 +13,7 @@ import {
 import React from "react";
 import styles from "./CSS/Signin.module.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Singin() {
   return (
@@ -75,7 +76,7 @@ export default function Singin() {
 
             <FormControl isRequired w="323.75px" h="67.2px" mt="30px">
               <Button colorScheme="blue" bg="rgba(138,153,168,.25)">
-                Create an account
+               <Link to="/signup"> Create an account</Link>
               </Button>
             </FormControl>
           </Box>

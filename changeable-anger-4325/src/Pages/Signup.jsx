@@ -11,11 +11,13 @@ import {
     ListItem,
     Text,
     UnorderedList,
+    useToast,
 } from "@chakra-ui/react";
 import React from "react";
 import styles from "./CSS/Signin.module.css";
 import { useState, useEffect } from "react";
-import Singin from "./Signin";
+import axios from "axios";
+import { Link, Navigate } from "react-router-dom";
 
 const intiState = {
     email: "",
@@ -25,41 +27,49 @@ const intiState = {
 
 export default function Signup() {
     const [signUp, setSignUp] = useState(intiState);
+    const [atLeast, setAtLeast] = useState(false);
     const [lower, setLower] = useState(false);
+    const [upper, setUpper] = useState(false);
+    const [symbol, setSymbol] = useState(false);
+    const [number, setNumber] = useState(false);
+    const [buttonOpen, setButtonOpen] = useState(false);
+    const toast = useToast();
 
     const handleChange = (e) => {
-        // setSignUp(e.target.value);
-
-        // console.log("e.target.value:-->", signUp);
         const { name, value } = e.target;
         setSignUp({ ...signUp, [name]: value });
     };
-    // let result = signUp.email.includes("@", "#");
-    // console.log("result:", result);
-    // if (signUp.email.length >= 8) {
-    //     console.log("lengthL:", signUp.email.length);
-    // }
+
+    // Atleast 8 character
+    function atLeastHave() {
+        if (signUp.password.length >= 8) {
+            return true;
+        }
+    }
+    let resultAtLeast = atLeastHave();
+    //   console.log('resultAtLeast:', resultAtLeast)
+
     // IncludesNumber
     function IncludesNumber() {
         let num = ["1", 2, 3, 4, 5, 6, 7, 8, 9];
         for (let i = 0; i < num.length; i++) {
-            if (signUp.username.includes(num[i])) {
+            if (signUp.password.includes(num[i])) {
                 return true;
             }
         }
-    };
+    }
     let resultNumber = IncludesNumber();
-    // console.log('resultNumber:', resultNumber);
+    //   console.log('resultNumber:', resultNumber);
 
     // IncludesSymbol
     function IncludesSymbol() {
         let symbol = ["@", "#", "$", "*", "^", "&"];
         for (let i = 0; i <= symbol.length; i++) {
-            if (signUp.username.includes(symbol[i])) {
+            if (signUp.password.includes(symbol[i])) {
                 return true;
             }
         }
-    };
+    }
     let resultSymbol = IncludesSymbol();
     // console.log('resultSymbol:', resultSymbol);
 
@@ -67,47 +77,73 @@ export default function Signup() {
     function IncludesLowerCase() {
         let symbol = "abcdefghijklmnopqrstuvwxyz";
         for (let i = 0; i <= symbol.length; i++) {
-            if (signUp.username.includes(symbol[i])) {
+            if (signUp.password.includes(symbol[i])) {
                 return true;
             }
         }
-    };
+    }
     let resultLowerCase = IncludesLowerCase();
-    console.log('resultLowerCase:', resultLowerCase);
-
+    // console.log('resultLowerCase:', resultLowerCase);
 
     // IncludesUpperCase
     function IncludesUpperCase() {
         let symbol = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for (let i = 0; i <= symbol.length; i++) {
-            if (signUp.username.includes(symbol[i])) {
+            if (signUp.password.includes(symbol[i])) {
                 return true;
             }
         }
-    };
+    }
     let resultUpperCase = IncludesUpperCase();
     // console.log('resultUpperCase:', resultUpperCase);
 
-    if (resultNumber && resultSymbol && resultLowerCase && resultUpperCase) {
+    let resultButtonOpen;
+    if (
+        resultNumber &&
+        resultSymbol &&
+        resultLowerCase &&
+        resultUpperCase &&
+        resultAtLeast
+    ) {
         console.log("all Inculdes:", true);
+        resultButtonOpen = true;
     }
 
     //useEffect to handle infinite rendering
     useEffect(() => {
+        setAtLeast(resultAtLeast);
         setLower(resultLowerCase);
-    }, [resultLowerCase])
-
+        setUpper(resultUpperCase);
+        setSymbol(resultSymbol);
+        setNumber(resultNumber);
+        setButtonOpen(resultButtonOpen);
+    }, [
+        resultAtLeast,
+        resultLowerCase,
+        resultUpperCase,
+        resultSymbol,
+        resultNumber,
+        buttonOpen,
+    ]);
+    // console.log(buttonOpen, "buttonOpen");
 
     const handleClick = () => {
         console.log(signUp);
+        toast({
+            title: "Account created.",
+            description: "We've created your account for you.",
+            status: "success",
+            duration: 9000,
+            isClosable: true,
+        });
 
-        //   axios({
-        //     method: "POST",
-        //     url: " http://localhost:4325/courses",
-        //     data: course,
-        //   }).then((res) => {
-        //     setCourse(intiState);
-        //   });
+        axios({
+            method: "POST",
+            url: "http://localhost:4325/credentials",
+            data: signUp,
+        }).then((res) => {
+            setSignUp(intiState);
+        });
     };
 
     // style for Authentication
@@ -118,11 +154,18 @@ export default function Signup() {
         authRejected: {
             color: "grey",
         },
-    }
+        authbuttonPass: {
+            background: "grey",
+        },
+        authButtonReject: {
+            background: "royalblue",
+        },
+    };
 
     const { email, username, password } = signUp;
     return (
         <Box bg="#0d0f12" m="auto">
+
             <Grid
                 h="200px"
                 margin="auto"
@@ -172,26 +215,43 @@ export default function Signup() {
                             <FormLabel color="white">Password</FormLabel>
                             <Input
                                 placeholder="Password"
-                                type="url"
-                            // name="authorImg"
-                            // value={authorImg}
-                            // onChange={handleChange}
+                                type="text"
+                                name="password"
+                                value={password}
+                                onChange={handleChange}
                             />
                         </FormControl>
 
-                        <Box>
-                            <Text as="h5" style={lower ? styleAuth.authPass : styleAuth.authRejected} >Have at least 8 Characters</Text>
-                            <Text as="h5" style={lower ? styleAuth.authPass : styleAuth.authRejected} >Have at least 1 letter (a,b,c,..)</Text>
-                            <Text as="h5" style={lower ? styleAuth.authPass : styleAuth.authRejected} >Have at least1 letter (a,b,c,..)</Text>
-                            <Text as="h5" style={lower ? styleAuth.authPass : styleAuth.authRejected} >Have at least1 letter (a,b,c,..)</Text>
-                            <Text as="h5" style={lower ? styleAuth.authPass : styleAuth.authRejected} >Have at least1 letter (a,b,c,..)</Text>
+                        <Box className={styles.passwordAuth}>
+                            <Heading as="h3">Password must:</Heading>
+                            <UnorderedList>
+                                <ListItem
+                                    style={atLeast ? styleAuth.authPass : styleAuth.authRejected}
+                                >
+                                    Have at least 8 Characters
+                                </ListItem>
+
+                                <ListItem
+                                    style={symbol ? styleAuth.authPass : styleAuth.authRejected}
+                                >
+                                    Have at least 1 letter (@,#,$,%,^,&,*)
+                                </ListItem>
+
+                                <ListItem
+                                    style={number ? styleAuth.authPass : styleAuth.authRejected}
+                                >
+                                    Have at least 1 number (1,2,3...)
+                                </ListItem>
+
+                                <ListItem
+                                    style={
+                                        lower && upper ? styleAuth.authPass : styleAuth.authRejected
+                                    }
+                                >
+                                    Include both uppercase and lowercase characters
+                                </ListItem>
+                            </UnorderedList>
                         </Box>
-                        <UnorderedList>
-                            <ListItem style={lower ? styleAuth.authPass : styleAuth.authRejected} >Have at least 8 Characters</ListItem>
-                            <ListItem>Consectetur adipiscing elit</ListItem>
-                            <ListItem>Integer molestie lorem at massa</ListItem>
-                            <ListItem>Facilisis in pretium nisl aliquet</ListItem>
-                        </UnorderedList>
 
                         <FormControl
                             isRequired
@@ -200,12 +260,20 @@ export default function Signup() {
                             h="67.2px"
                             mt="30px"
                         >
-                            <Button colorScheme="blue" w="323.75px" maxW="323.75px">
+                            <Button
+                                disabled={!buttonOpen}
+                                colorScheme="blue"
+                                w="323.75px"
+                                maxW="323.75px"
+                                onClick={handleClick}
+                            >
                                 Sign Up
                             </Button>
                         </FormControl>
 
-                        <Box className={styles.forgetBox}></Box>
+                        <Box className={styles.forgetBox}>
+                            <Link to="/signin" >Click here? Sign In</Link>
+                        </Box>
                     </Box>
 
                     <Box w="full" className={styles.copyRight}>
@@ -214,6 +282,7 @@ export default function Signup() {
                         </Text>
                         <Text>Terms of Use | Privacy Policy</Text>
                     </Box>
+
                 </GridItem>
 
                 <GridItem
@@ -232,7 +301,6 @@ export default function Signup() {
                             src="https://www.pluralsight.com/content/dam/pluralsight2/login/login-h1.png"
                             alt=""
                         />
-                        <Button>Try for free</Button>
                     </Box>
 
                     <Box>
@@ -243,7 +311,9 @@ export default function Signup() {
                         <Image src="https://www.pluralsight.com/content/dam/pluralsight2/logos/logo-build-better.png" />
                     </Box>
                 </GridItem>
+
             </Grid>
+
         </Box>
     );
 }
