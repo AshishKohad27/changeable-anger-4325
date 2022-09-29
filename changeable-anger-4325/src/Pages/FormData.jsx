@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { BsFillClockFill, BsStarFill } from "react-icons/bs";
 
 const intiState = {
   title: "",
@@ -21,6 +22,7 @@ const intiState = {
   level: "",
   update: "",
   rating: "",
+  ratingStars:"",
   about: "",
   whatYouWillLearn: "",
   authorImg:"",
@@ -54,6 +56,7 @@ export default function FormData() {
     level,
     update,
     rating,
+    ratingStars,
     about,
     whatYouWillLearn,
     authorImg,
@@ -181,6 +184,22 @@ export default function FormData() {
             value={rating}
             onChange={handleChange}
           />
+        </FormControl>
+
+        <FormControl>
+          <FormLabel>Rating Stars</FormLabel>
+          <Select
+            placeholder="Rating Stars"
+            name="ratingStars"
+            value={ratingStars}
+            onChange={handleChange}
+          >
+            <option>⭐️</option>
+            <option>⭐️⭐️</option>
+            <option>⭐️⭐️⭐️</option>
+            <option>⭐️⭐️⭐️⭐️</option>
+            <option>⭐️⭐️⭐️⭐️⭐️</option>
+          </Select>
         </FormControl>
       </GridItem>
 

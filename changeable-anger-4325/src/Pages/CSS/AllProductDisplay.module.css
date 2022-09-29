@@ -1,0 +1,67 @@
+.block_0 {
+  background-color: aqua;
+  width: 900px;
+  max-width: 900px;
+  /* height: 2449px; */
+  height: 400px;
+}
+.block_0 > div {
+  border-bottom: 2px solid #cccccc;
+}
+.block_0 > div > h3 {
+  margin-top: 20px;
+  /* background-color: red; */
+  text-align: left;
+  font-size: 18px;
+  color: #fff;
+}
+.block_0 > div > p {
+  /* background-color: aqua; */
+  font-size: 15px;
+  text-align: left;
+  font-weight: 400;
+  color: #ffffff;
+}
+.block_1 {
+  margin-top: 10px;
+  /* display: flex; */
+  max-width: 400px;
+  /* justify-content: space-between; */
+  /* background-color: lawngreen; */
+  font-size: 15px;
+  font-weight: bold;
+  color: #cccccc;
+}
+.block_1 > div:nth-child(1) {
+  max-width: 80px;
+  /* background-color: red   ; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.block_1 > div:nth-child(2) {
+  width: 100px;
+  max-width: 100px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.block_1 > div:nth-child(3) {
+  width: 100px;
+  max-width: 100px;
+  display: flex;
+  justify-content:center;
+  /* background-color: red; */
+}
+.block_1 > div:nth-child(4) {
+    width: 100px;
+    max-width: 100px;
+    /* background-color: red; */
+    color: white;
+  }
+
+.block_1 > div:nth-child(4):hover{
+    color: royalblue;
+    text-decoration: underline;
+}
