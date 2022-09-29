@@ -1,0 +1,114 @@
+.block_0 {
+  max-width: 435px;
+  height: auto;
+  background-color: #222222;
+  color: #ffffff;
+  border-radius: 10px;
+  /* border-bottom: 2px solid #ececec;   */
+}
+.block_1 {
+  max-width: 435px;
+  height: 283px;
+  /* background-color: palevioletred; */
+  text-align: center;
+  border-radius: 10px;
+  border-bottom: 2px solid #ececec;
+}
+.block_1 > h2 {
+  font-size: 26px;
+  max-width: 355px;
+  margin: auto;
+  padding-top: 35px;
+  margin-bottom: 10px;
+  /* background-color: blue; */
+  text-align: left;
+}
+.block_1 > p:nth-child(2) {
+  font-size: 17px;
+  /* background-color: aqua; */
+  max-width: 355px;
+  margin: auto;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.block_1 > button {
+  font-size: 15px;
+  margin: auto;
+  background-image: linear-gradient(to right, #f05a28, #ec008c, #f05a28);
+  margin-bottom: 18px;
+}
+.block_1 > p:nth-child(4) {
+  /* background-color: red; */
+  font-size: 17px;
+  max-width: 355px;
+  margin: auto;
+  font-weight: 500;
+}
+.block_2 {
+  max-width: 435px;
+  height: 225px;
+  /* background-color: palegreen; */
+  border-radius: 10px;
+  border-bottom: 2px solid #ececec;
+}
+.block_2>h2{
+    /* background-color: #ec008c; */
+    margin-bottom: 10px;
+    padding-top: 35px;
+    font-size: 17px;
+
+}
+.block_2>div{
+    max-width: 355px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* background-color: #f05a28; */
+}
+.block_2>div>div>img{
+    max-width: 35px;
+    height: 35px;
+    margin-top: 10px;
+}
+.block_21{
+    /* background-color: #ec008c; */
+    margin-left: 20px;
+}
+.block_21>h2,.block_21>p{
+    font-size: 17px;
+    text-align: left;
+}
+.block_3 {
+  max-width: 435px;
+  height: 174px;
+  /* background-color: peru; */
+  border-radius: 10px;
+  border-bottom: 2px solid #ececec;
+}
+.block_3 > p:nth-child(1) {
+  font-size: 22px;
+  max-width: 355px;
+  margin: auto;
+  margin-bottom: 5px;
+  padding-top:35px ;
+}
+.block_3 > p:nth-child(2) {
+  font-size: 17px;
+  max-width: 355px;
+  margin: auto;
+  text-align: left;
+}
+.block_3 > p:nth-child(2)>span:nth-child(1){
+    /* color: #ec008c; */
+    font-weight: bold;
+}
+.block_3 > p:nth-child(2)>span:nth-child(1):hover{
+    /* color: #ec008c; */
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+.block_3 > p:nth-child(2)>span:nth-child(2){
+    font-weight: bold;
+}

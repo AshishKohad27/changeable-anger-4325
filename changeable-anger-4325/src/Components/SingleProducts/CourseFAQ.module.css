@@ -1,0 +1,33 @@
+    /* .faq{
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+    } */
+.title{
+    /* background-color: #222222; */
+    color: #eeeeee;
+    font-weight: bold;
+    font-size: 20px;
+}
+.titleContent{
+    font-size: 17px;
+    /* background-color: aqua; */
+    text-align: left;
+}
+.frequently{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.frequently>p{
+    margin-bottom: 20px;
+    font-size: 17px;
+    color: #ec008c;
+    font-weight: bold;
+}
+.frequently>h1{
+    font-size: 40px;
+
+}

@@ -1,16 +1,60 @@
-.block_0{
-    background-color: #202020;
+.block_0 {
+  background-color: #202020;
 }
-.block_1{
-    max-width: 1359px;
-    height: 267.38px;
-    background-color: teal;
+.block_1 {
+  max-width: 1359px;
+  height: 267.38px;
+  background-color: teal;
+  margin: auto;
+}
+.block_2 {
+  max-width: 1349px;
+  height: 55px;
+  background-color: olive;
+  color: aliceblue;
+  text-align: left;
+  margin: auto;
+  padding-left: 28px;
+}
+.block_3 {
+  max-width: 1349px;
+  margin: auto;
+ display: flex;
+  /* background-color: green; */
+}
+.block_3 > div {
+  display: flex;
+  margin: auto;
+}
+.block_3 > div > input {
+  height: 55px;
+  border: 2px solid white;
+  font-weight: 25px;
+}
+.block_3 > div > button {
+  /* max-width: 500px; */
+  height: 55px;
+  background-color: #363638;
+}
+.block_3 > div:nth-child(2) button:nth-child(1) {
+  max-width: 170px;
+  height: 55px;
+  background-color: #202020;
+  border: 2px solid white;
+  font-weight: bold;
+  font-size: 16px;
+}
+.block_4{
+    /* background-color: palegreen; */
+    max-width: 1289px;
+    height: 600px;
     margin: auto;
+    display: flex;
+    margin-top: 20px;
 }
-.block_2{
-    max-width: 1349px;
-    height: 64px;
-    background-color: olive;
-    text-align: left;
-    margin: auto;
+.block_4>div:nth-child(1){
+    background-color: red;
+    width: 389px;
+    max-width: 389px;
 }
+
