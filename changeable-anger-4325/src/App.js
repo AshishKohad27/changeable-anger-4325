@@ -4,11 +4,12 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import AllRoutes from './Routes/AllRoutes';
 import Footer from './Components/Footer';
-
+import PluralsightNavbar from './Components/PluralsightNvabar';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <PluralsightNavbar/>
+      {/* <Navbar/> */}
       <AllRoutes/>
      {/* <FormData/> */}
     </div>

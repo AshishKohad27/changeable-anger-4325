@@ -9,13 +9,16 @@ import {
 import { Link, NavLink } from "react-router-dom";
 import React from "react";
 
-const links = [{ path: "/", title: "Home" },
-{ path: "/signin", title: "Signin" },
-{ path: "/signup", title: "Singup" },
-{ path: "/contactsale", title: "Contact Sales" },
-{ path: "/allproduct", title: "Products" },
-{ path: "/form", title: "Forms Data" },
-{ path: "/footer", title: "Footer" }
+const links = [
+    { path: "/pluralsightnavbar", title: "Navbar" },
+    { path: "/", title: "Home" },
+    { path: "/signin", title: "Signin" },
+    { path: "/signup", title: "Singup" },
+    { path: "/contactsale", title: "Contact Sales" },
+    { path: "/allproduct", title: "Products" },
+    { path: "/form", title: "Forms Data" },
+    { path: "/footer", title: "Footer" }
+
 ];
 
 export default function Navbar() {

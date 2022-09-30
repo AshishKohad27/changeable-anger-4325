@@ -1,9 +1,10 @@
-import { Box, Button, Heading, Input, Menu, MenuButton, MenuItem, MenuItemOption, MenuList, MenuOptionGroup, Portal, Tooltip, useStatStyles } from "@chakra-ui/react";
+import { Box, Button, Heading, Image, Input, Menu, MenuButton, MenuItem, MenuItemOption, MenuList, MenuOptionGroup, Portal, Tooltip, useStatStyles } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import React, { useState } from "react";
 import styles from "./CSS/AllProduct.module.css"
 import AllProductDisplay from "./AllProductDisplay.jsx";
 import SildeFilter from "../Components/Side Filter/SideFilter";
+import Footer from "../Components/Footer";
 
 export default function AllProduct() {
 
@@ -15,7 +16,14 @@ export default function AllProduct() {
 
     return (
         <Box className={styles.block_0}>
-            <Box className={styles.block_1}></Box>
+            <Box className={styles.block_1}>
+                <Image src="	https://www.pluralsight.com/content/dam/pluralsight2/browse/backgrounds/bg-hero.png" />
+                <Box>
+                    <Image src="https://www.pluralsight.com/content/dam/pluralsight2/product/v2/logos/logo-skills.png" />
+                    <Heading>Thousands of courses authored by
+                        our network of industry experts</Heading>
+                </Box>
+            </Box>
             <Box className={styles.block_2}>
                 <Heading>Search</Heading>
             </Box>
@@ -48,6 +56,7 @@ export default function AllProduct() {
                     filterD={filterD}
                 />
             </Box>
+            <Footer />
         </Box>
     )
 }

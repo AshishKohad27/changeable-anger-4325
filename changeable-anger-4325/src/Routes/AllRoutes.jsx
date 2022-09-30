@@ -8,6 +8,7 @@ import PageNotFound from "../Pages/PageNotFound";
 import Signup from "../Pages/Signup";
 import Footer from "../Components/Footer";
 import SingleProduct from "../Pages/SingleProduct";
+import PluralsightNavbar from "../Components/PluralsightNvabar";
 
 export default function AllRoutes() {
     return (
@@ -21,6 +22,7 @@ export default function AllRoutes() {
             <Route path="/courses/:data_id" element={<SingleProduct />} />
             <Route path="/form" element={<FormData />} />
             <Route path="/footer" element={<Footer />} />
+            <Route path="/pluralsightnavbar" element={<PluralsightNavbar/>} />
             <Route path="*" element={<PageNotFound />} />
         </Routes>
     )
