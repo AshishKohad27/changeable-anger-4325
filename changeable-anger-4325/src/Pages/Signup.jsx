@@ -135,6 +135,7 @@ export default function Signup() {
             status: "success",
             duration: 9000,
             isClosable: true,
+            position:"top"
         });
 
         axios({

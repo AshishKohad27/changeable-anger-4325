@@ -117,6 +117,7 @@ export default function SingleProduct() {
                 <Footer />
                 {/* <TryForFree /> */}
             </Box>
+            
         </Box>
     );
 }

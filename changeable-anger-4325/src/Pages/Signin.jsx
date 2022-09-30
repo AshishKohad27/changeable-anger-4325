@@ -9,13 +9,95 @@ import {
   Image,
   Input,
   Text,
+  useFormControlStyles,
+  useToast,
 } from "@chakra-ui/react";
 import React from "react";
 import styles from "./CSS/Signin.module.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { BsFillCheckCircleFill } from "react-icons/bs";
+import { MdError } from "react-icons/md";
+
+const intiUsers = {
+  username: "",
+  password: "",
+};
 
 export default function Singin() {
+  const [signIn, setSignIn] = useState([]);
+  const [comparingUsers, setComparingUsers] = useState(intiUsers);
+  const toast = useToast();
+
+  const fetchTodosDataAndUpdate = () => {
+    axios
+      .get(`http://localhost:4325/credentials`)
+      .then((res) => setSignIn(res.data)) //-->Promise completed here
+      .catch((err) => console.log("axios error:", err)) //-->any error show here
+      .finally(() => console.log("Call Completed")); //--> when data completed then it show on console
+    //
+  };
+
+  useEffect(() => {
+    fetchTodosDataAndUpdate();
+  }, []);
+
+  const handleChange = (e) => {
+    const { type, name, value } = e.target;
+    setComparingUsers({ ...comparingUsers, [name]: value });
+  };
+
+  const handleClick = () => {
+    let checkingData = false;
+
+    if (comparingUsers.username === "" && comparingUsers.password === "") {
+      let text = "Please Enter your Username and Password";
+      let color = "orange.300";
+      let symbol = <MdError fontSize="18px" />
+      displayAuthState(color, text, symbol);
+      return;
+    }
+
+    signIn.forEach((ele) => {//warning
+      if (ele.username === comparingUsers.username && ele.password === comparingUsers.password) {
+        console.log("i am present username")  ;
+        checkingData = true;
+      }
+    });
+
+    console.log("checkingData:", checkingData);
+
+    if (checkingData) {//Successfully logged in
+      let color = "green.300";
+      let text = "You are Successfully Login";
+      let symbol = <BsFillCheckCircleFill fontSize="18px" />
+      displayAuthState(color, text, symbol);
+    } 
+    else {//Incoreect logged in
+      let color = "red.300";
+      let text = "Please fill Correct Credentials";
+      let symbol = <MdError fontSize="18px" />
+      displayAuthState(color, text, symbol);
+    }
+
+    setComparingUsers(intiUsers);
+  };
+
+  const displayAuthState = (color, text, symbol) => {
+    toast({
+      position: "top",
+      render: () => (
+        <Box color="black" fontWeight="bold" display="flex" justifyContent="center" alignContent="center" gap="10px" borderRadius="10px" p={4} bg={color}>
+          {symbol}
+          <Heading fontSize="16px">{text}</Heading>
+        </Box>
+      ),
+    });
+  };
+
+  // console.log('signIn:', signIn)
+  const { username, password } = comparingUsers;
   return (
     <Box bg="#0d0f12" m="auto">
       <Grid
@@ -41,30 +123,35 @@ export default function Singin() {
           </Heading>
 
           <Box>
-            <FormControl isRequired wMax="323.75px" h="67.2px" mt="20px">
+            <FormControl isRequired maxW="323.75px" h="67.2px" mt="20px">
               <FormLabel color="white">Email or Username</FormLabel>
               <Input
                 placeholder="Email or Username"
                 type="url"
-                // name="authorImg"
-                // value={authorImg}
-                // onChange={handleChange}
+                name="username"
+                value={username}
+                onChange={handleChange}
               />
             </FormControl>
 
-            <FormControl isRequired wMax="323.75px" h="67.2px" mt="30px">
+            <FormControl isRequired maxW="323.75px" h="67.2px" mt="30px">
               <FormLabel color="white">Password</FormLabel>
               <Input
                 placeholder="Password"
                 type="url"
-                // name="authorImg"
-                // value={authorImg}
-                // onChange={handleChange}
+                name="password"
+                value={password}
+                onChange={handleChange}
               />
             </FormControl>
 
-            <FormControl isRequired wMax="323.75px" h="67.2px" mt="30px">
-              <Button colorScheme="blue" w="323.75px" wMax="323.75px">
+            <FormControl isRequired maxW="323.75px" h="67.2px" mt="30px">
+              <Button
+                colorScheme="blue"
+                w="323.75px"
+                maxW="323.75px"
+                onClick={handleClick}
+              >
                 Sign in
               </Button>
             </FormControl>
@@ -76,7 +163,7 @@ export default function Singin() {
 
             <FormControl isRequired w="323.75px" h="67.2px" mt="30px">
               <Button colorScheme="blue" bg="rgba(138,153,168,.25)">
-               <Link to="/signup"> Create an account</Link>
+                <Link to="/signup"> Create an account</Link>
               </Button>
             </FormControl>
           </Box>

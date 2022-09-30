@@ -1,0 +1,72 @@
+.block_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.block_11 {
+  margin-top: 100px;
+  height: 24px;
+}
+.block_2 > div > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* max-width: 224px;     */
+}
+.block_2 > div > div > img {
+  max-width: 184px;
+  height: 40px;
+  /* background-color: #2b2b2b; */
+}
+.block_21 > div:nth-child(2):hover,
+.block_21 > div:nth-child(3):hover,
+.block_21 > div:nth-child(4):hover,
+.block_21 > div:nth-child(5):hover,
+.block_21 > div:nth-child(6):hover {
+  border-bottom: 3px solid #ec008c;
+  /* background-color: lawngreen; */
+}
+.block_3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.block_3 > div {
+  max-width: 20px;
+  height: 40px;
+  background-color: red;
+  gap: 20px;
+}
+.block_3 > div h2 {
+  font-size: 15px;
+  color: white;
+}
+.menu_1btn > button:hover {
+  background-color: blue;
+}
+.menu_1 {
+  width: 210px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.contactbtn {
+  border: 2px solid white;
+  width: 164px;
+  max-width: 164px;
+  height: 40px;
+  border-radius: 0px;
+}
+.contactbtn:hover {
+  background-color: white;
+  color: black;
+}
+.contactbtn1 {
+  width: 149px;
+  max-width: 149px;
+  height: 40px;
+  background-color: #ec008c;
+  color: white;
+  border-radius: 0px;
+  background-image: linear-gradient(to right,#f05a28,#ec008c,#f05a28);
+}

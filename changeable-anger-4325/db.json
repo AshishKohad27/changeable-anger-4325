@@ -78,33 +78,22 @@
   ],
   "credentials": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
       "email": "kohadashish27@gmail.com",
-      "username": "Ahsihs",
-      "password": "@ADShj12",
-      "id": 2
-    },
-    {
-      "email": "AshishKhuKOhad27@gmail.com",
-      "username": "Ashish#27",
-      "password": "a@1sKJDKSKJ",
-      "id": 3
+      "username": "Ashish",
+      "password": "Ashish@123",
+      "id": 6
     },
     {
       "email": "abhishek@gmai.com",
-      "username": "@AshishKhuKOhad27",
-      "password": "aA#1HFJK",
-      "id": 4
+      "username": "Rahul#27",
+      "password": "Rahul#27",
+      "id": 7
     },
     {
-      "email": "AshishKhuKOhad27@gmail.com",
-      "username": "Ashish#27",
-      "password": "@1aAhhhh",
-      "id": 5
+      "email": "abhishek@gmai.com",
+      "username": "Abhishek@27",
+      "password": "Abhishek@27",
+      "id": 8
     }
   ],
   "posts": [

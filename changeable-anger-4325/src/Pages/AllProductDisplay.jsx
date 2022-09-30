@@ -69,15 +69,20 @@ export default function AllProductDisplay({ order, filterD }) {
 
   return (
     <Box>
-      <Box className={styles.block_0}>
+      <Box className={styles.block_0}  maxW="857px" 
+        // bg="green.300"
+        >
         {data.map((ele) => (
           <Box
             key={ele.id}
+            w="857px"
+            // maxWidth="857px" 
             maxW="857px"
-            h="134.98px"
-            bg="teal.500"
+            // h="134.98px"
+            // bg="teal.500"
             padding="10px"
-            border="1px solid black"
+            paddingLeft="20px"
+            // border="1px solid black"
           >
             <Heading as="h3">{ele.title}</Heading>
             <Text>by {ele.creator}</Text>
@@ -85,6 +90,7 @@ export default function AllProductDisplay({ order, filterD }) {
             <SimpleGrid
               columns={{ base: 1, sm: 2, md: 4 }}
               spacing="40px"
+              // bg="red.500"
               className={styles.block_1}
             >
               <Box>
