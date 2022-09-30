@@ -1,0 +1,115 @@
+.block_0 {
+  max-width: 1348px;
+  height: 652px;
+  background-color: #222222;
+  margin: auto;
+  padding-top: 100px;
+  color: #9b9b9b;
+}
+.block_1 {
+  max-width: 1148px;
+  height: 400px;
+  /* background-color: palegreen; */
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #9b9b9b;
+}
+.block_1 > div:nth-child(1) {
+  /* background-color: aqua; */
+  width: 781px;
+  max-width: 781px;
+  height: 100px;
+}
+.block_1 > div:nth-child(2) {
+  /* background-color: blue; */
+  width: 384px;
+  max-width: 384px;
+  height: 284px;
+}
+.block_2 > div > div:nth-child(1) > h2 {
+  margin-top: 0px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+.block_2 > div > div > h2 {
+  margin-top: 10px;
+  /* background-color: red; */
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+}
+.block_4 {
+  /* background-color: rebeccapurple; */
+  text-align: left;
+}
+.block_4 > h2:nth-child(1) {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.block_4 > h2:nth-child(2) {
+  font-size: 16px;
+  color: #9b9b9b;
+  margin-bottom: 16px;
+}
+.block_4 > div:nth-child(3) {
+  /* background-color: red; */
+  margin-bottom: 16px;
+}
+.block_4 > div:nth-child(3) input {
+  height: 46px;
+}
+.block_4 > div:nth-child(3) input:hover {
+  border: 2px solid #ec008c;
+}
+.block_4 > div:nth-child(4) {
+  margin-bottom: 16px;
+}
+.block_4 > div:nth-child(5) > button {
+  font-size: 14px;
+  width: 115px;
+  height: 40px;
+  border-radius: 0px;
+  background-image: linear-gradient(90deg, #ec008c 0, #f15b2a 100%) !important;
+}
+.block_4 > div:nth-child(6) {
+  margin-top: 30px;
+  display: flex;
+  width: 180px;
+  align-items: center;
+  justify-content: space-between;
+}
+.block_5 {
+  font-size: 12px;
+  color: #9b9b9b;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+.block_5 > div:nth-child(1) {
+  display: flex;
+  /* background-color: red; */
+  max-width: 396px;
+  height: 49px;
+  align-items: center;
+  justify-content: space-between;
+}
+.block_5 > div:nth-child(2) {
+  display: flex;
+  /* background-color: green; */
+  max-width: 200.89px;
+  height: 21.11px;
+  align-items: center;
+  justify-content: space-between;
+}
+.block_5 > div:nth-child(3) {
+  display: flex;
+  /* background-color: yellow; */
+  max-width: 445.8px;
+  height: 20px;
+  align-items: center;
+  justify-content: space-between;
+}

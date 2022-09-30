@@ -1,0 +1,86 @@
+.block_0 {
+  max-width: 435.27px;
+  height: 344.41px;
+  background-color: plum;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  /* background-image: url(`https://www.pluralsight.com/content/pluralsight/en/product/skill-iq/jcr:content/image-res.transform/share-image/image.img.62cd6012-136d-4ed7-9fff-787a960b43ea.jpg`); */
+}
+.block_0 > div:nth-child(1) {
+  width: 5px;
+  height: 345.41px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  position: absolute;
+  z-index: 10px;
+
+  background-image: linear-gradient(
+    to bottom,
+    #26c1e1 0,
+    #26c1e1 33%,
+    #86ce21 33%,
+    #86ce21 33%,
+    #86ce21 68%,
+    #ffc200 68%,
+    #ffc200 100%
+  );
+}
+
+/* .block_0 > div:nth-child(2) > img {
+  max-width: 435.27px;
+  height: 344.41px;
+  border-radius: 10px;
+} */
+.block_0 > div:nth-child(2) > div {
+  position: absolute;
+  top: 30px;
+  /* background-color: #86ce21; */
+  background-color: rgba(
+    rgb(44, 39, 39),
+    rgb(141, 187, 141),
+    rgb(36, 36, 66),
+    1
+  );
+  padding-left: 40px;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+.block_0 > div:nth-child(2) > div > h4 {
+  max-width: 295.27px;
+  height: 89.59px;
+  margin-top: 20px;
+  font-size: 32px;
+  color: white;
+  text-align: left;
+}
+.block_0 > div:nth-child(2) > div > p {
+  max-width: 375.27px;
+  height: 56px;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  color: #ececec;
+  margin-bottom: 20px;
+}
+.block_0 > div:nth-child(2) > div > button {
+  max-width: 315px;
+  height: 54.5px;
+  font-size: 15px;
+  border: 2px solid white;
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+.block_0 > div:nth-child(2) > div > button:hover {
+  background-color: #ec008c;
+}
+
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .block_0 {
+    display: none;
+  }
+}
