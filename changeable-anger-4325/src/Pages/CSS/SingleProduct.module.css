@@ -1,0 +1,132 @@
+.block_0{
+    color: white;
+  background-color: #181818;
+
+}
+.block_0>div{
+    margin: auto;
+    max-width: 1348px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ececec;
+}
+.block_B1{
+    /* margin-top: 50px; */
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: palevioletred; */
+    padding-left: 20px;
+    padding-top: 40px;
+    /* margin: 0; */
+}
+.block_1 {
+  color: white;
+  background-color: #181818;
+  padding-top: 20px;
+}
+
+.block_S1 > div:nth-child(1) {
+  /* background-color: olive; */
+  max-width: 778px;
+  height: 80px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: left;
+}
+/* .block_S1 > div:nth-child(2) {
+  max-width: 778px;
+  height: 40px;
+  background-color: palevioletred;
+  margin-bottom: 20px;
+  padding-left: 20px;
+} */
+.block_S1 > div:nth-child(2) {
+  max-width: 778px;
+  height: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: paleturquoise; */
+  padding-left: 20px;
+}
+.block_S1 > div:nth-child(2) > img {
+  width: 53px;
+  height: 53px;
+  border-radius: 50px;
+  /* background-color: red; */
+}
+.block_S1 > div:nth-child(2) > h1:nth-child(2) {
+  font-size: 18px;
+  /* background-color: saddlebrown; */
+  font-weight: bold;
+  color: white;
+  padding-left: 20px;
+}
+.block_S1 > div:nth-child(2) > h1:nth-child(3) {
+  /* background-color: aqua; */
+  margin-left: 20px;
+  font-size: 18px;
+}
+.block_S1 > div:nth-child(3) > p {
+  text-align: justify;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  /* background-color: red; */
+  line-height: 25px;
+}
+
+.block_S1 > div:nth-child(4) {
+  padding-left: 20px;
+  text-align: left;
+  margin-bottom: 100px;
+}
+.block_S1 > div:nth-child(4) > button {
+  border-radius: 0px;
+  border: 2px solid white;
+  background-color: #181818;
+  max-width: 276px;
+  height: 55px;
+}
+.block_S1 > div:nth-child(5) {
+  /* background-color: greenyellow; */
+  padding-left: 20px;
+  margin-bottom: 20px;
+  line-height: 25px;
+}
+.block_S1 > div:nth-child(5) > h1 {
+  /* background-color: peru; */
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.block_S1 > div:nth-child(5) > p {
+  text-align: justify;
+}
+.block_S2 {
+  max-width: 435.37px;
+  height: auto;
+  background-color: royalblue;
+  margin: auto;
+  /* color: white; */
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.block_S2>h2{
+    margin-bottom: 30px;
+}
+.block_S2 th,.block_S2 td{
+    font-size: 17px;
+    color: white;
+}
+
+@media screen and (min-width: 0px) and (max-width: 800px) {
+    .block_S2{
+       display: none;
+    }
+   }
+   

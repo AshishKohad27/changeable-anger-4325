@@ -1,14 +1,44 @@
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import {
+    Box,
+    GridItem,
+    Heading,
+    SimpleGrid,
+    Grid,
+    Image,
+    Text,
+    Button,
+    Table,
+    Thead,
+    Tbody,
+    Tfoot,
+    Tr,
+    Th,
+    Td,
+    TableCaption,
+    TableContainer,
+} from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Footer from "../Components/Footer";
 import CourseFAQ from "../Components/SingleProducts/CourseFAQ";
 import TryForFree from "../Components/SingleProducts/TryForFree";
+import styles from "./CSS/SingleProduct.module.css";
+import {
+    BsClockFill,
+    BsFillBarChartLineFill,
+    BsFillCalendarMinusFill,
+    BsFillCaretRightFill,
+} from "react-icons/bs";
+import { MdOutlineCategory, MdOutlineSubject } from "react-icons/md";
+import CourseInfo from "../Components/CourseInfo";
+import SkillIQ from "../Components/SingleProducts/SkillIQ";
+// import SkillIQ from "../Components/SingleProducts/SkillIQ";
 
 const getData = (url) => {
     return fetch(url).then((res) => res.json());
-}
+};
 
 export default function SingleProduct() {
     const { data_id } = useParams();
@@ -17,18 +47,77 @@ export default function SingleProduct() {
     useEffect(() => {
         getData(`  http://localhost:4325/courses/${data_id}`).then((res) =>
             setcoursesDetails(res)
-        )
-    }, [])
-    console.log('useParams coursesDetails:', coursesDetails)
+        );
+    }, []);
+    console.log("useParams coursesDetails:", coursesDetails);
 
     return (
-        <Box>
-            <SimpleGrid columns={{ sm: 1, md: 2 }}  m="auto" maxW="1349px" h="800px" bg="teal.500">
-                <Box></Box>
-                <Box bg=''> <TryForFree /></Box>
+        <Box className={styles.block_0}>
+          <Box>
+          <Box className={styles.block_B1}>
+                <Text>
+                    <Link to="/" >Home</Link>
+                </Text>
+                <BsFillCaretRightFill />
+                <Text>
+                    <Link to="/allproduct">Browser</Link>
+                </Text>
+                <BsFillCaretRightFill />
+                <Text>
+                    <Link to="/allproduct">Course</Link>
+                </Text>
+            </Box>
+          </Box>
+            <Box className={styles.block_1}>
+                <Box>
+                    <Grid
+                        maxW="1348px"
+                        m="auto"
+                        // templateRows='repeat(2,1fr)'
+                        templateColumns="repeat(12, 1fr)"
+                        gap={0}
+                    >
+                        <GridItem colSpan={{ sm: 12, md: 8 }} bg="">
+                            <Box maxW="778px" bg="" className={styles.block_S1}>
+                                <Box>{coursesDetails.title}</Box>
+                                <Box>
+                                    <Image src={coursesDetails.authorImg} />
+                                    <Heading as="h1">{coursesDetails.creator}</Heading>
+                                    <Heading as="h1">{coursesDetails.ratingStars}</Heading>
+                                </Box>
+                                <Box>
+                                    <Text>{coursesDetails.about}</Text>
+                                </Box>
+                                <Box>
+                                    <Button>
+                                        <BsFillCaretRightFill />
+                                        <Text>PREVIEW THIS COURSE</Text>
+                                    </Button>
+                                    <CourseInfo coursesDetails={coursesDetails} />
+                                </Box>
+                                <Box maxW="778px">
+                                    <Heading as="h1">What you'll learn</Heading>
+                                    <Text>{coursesDetails.whatYouWillLearn}</Text>
+                                </Box>
+                            </Box>
+                        </GridItem>
+
+                        <GridItem colSpan={{ sm: 0, md: 4 }} bg="">
+                            <Box bg="#181818">
+                                <TryForFree />
+                                {/* <CourseInfo coursesDetails={coursesDetails} /> */}
+                                <SkillIQ/>
+                            </Box>
+                        </GridItem>
+                    </Grid>
+                </Box>
+                <Box className={styles.block_2} m="50px">
+                    <CourseFAQ />
+                </Box>
+                <Footer />
                 {/* <TryForFree /> */}
-            </SimpleGrid>
-            <CourseFAQ/>
+            </Box>
         </Box>
-    )
+    );
 }
+// background: linear-gradient(to bottom,#26c1e1 0,#26c1e1 33%,#86ce21 33%,#86ce21 33%,#86ce21 68%,#ffc200 68%,#ffc200 100%);

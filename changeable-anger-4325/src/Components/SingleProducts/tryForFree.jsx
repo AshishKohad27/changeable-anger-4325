@@ -11,7 +11,7 @@ export default function TryForFree() {
           Get this course plus top-rated picks in tech skills and other popular
           topics.
         </Text>
-        <Button w="355px" maxW="355px" h="52px">GET STARTED</Button>
+        <Button maxW="355px" h="52px">GET STARTED</Button>
         <Text>₹ 1,499 per month after 10 day trial</Text>
       </Box>
 

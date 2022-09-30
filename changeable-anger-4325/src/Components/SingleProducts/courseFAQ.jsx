@@ -14,7 +14,7 @@ import styles from "./CourseFAQ.module.css";
 
 export default function CourseFAQ() {
   return (
-    <Box>
+    <Box >
       <SimpleGrid
         columns={{ sm: 1, md: 2 }}
         m="auto"
@@ -23,10 +23,11 @@ export default function CourseFAQ() {
         bg="#222222"
         color="#ececec"
         mb="50PX"
+        padding="50px 10px"
         className={styles.faq}
         // display="flex"
       >
-        <Box maxW="555px" h="auto" className={styles.frequently}>
+        <Box maxW="555px" h="auto"  className={styles.frequently}>
             <Text>KNOW WHAT YOU'RE GETTING</Text>
             <Heading as="h1">A few frequently asked questions</Heading>
         </Box>

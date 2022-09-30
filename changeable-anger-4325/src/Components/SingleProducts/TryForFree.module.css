@@ -112,3 +112,9 @@
 .block_3 > p:nth-child(2)>span:nth-child(2){
     font-weight: bold;
 }
+
+@media screen and (min-width: 0px) and (max-width: 800px) {
+ .block_0{
+    display: none;
+ }
+}
