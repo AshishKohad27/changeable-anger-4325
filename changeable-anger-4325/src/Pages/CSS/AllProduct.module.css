@@ -1,5 +1,6 @@
 .block_0 {
   background-color: #202020;
+  height: auto;
 }
 .block_1 {
   max-width: 1359px;
@@ -59,7 +60,7 @@
   background-color: #363638;
 }
 .block_3 > div:nth-child(2) button:nth-child(1) {
-    width:170px;
+  width: 170px;
   max-width: 170px;
   height: 55px;
   background-color: #202020;
@@ -77,15 +78,14 @@
   margin-top: 20px;
 }
 .block_4 > div:nth-child(1) {
-  background-color: red;
-  width: 389px;
-  max-width: 389px;
+  /* background-color: red; */
+  width: 289px;
+  max-width: 289px;
 }
 
 @media screen and (min-width: 0px) and (max-width: 1000px) {
-    .block_1>div {
-      /* background-color: red; */
-      display: none;
-    }
+  .block_1 > div {
+    /* background-color: red; */
+    display: none;
   }
-  
+}

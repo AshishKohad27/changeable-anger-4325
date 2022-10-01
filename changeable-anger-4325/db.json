@@ -36,7 +36,7 @@
       "category": "Web development",
       "creator": "Nitin Singh",
       "duration": "1h 48m",
-      "level": "Intermidate",
+      "level": "Beginner",
       "update": "2021-05-13",
       "rating": "2",
       "about": "Nitin is a full stack developer with over 10+ years of experience developing world class apps and SDKs that are used and loved by millions of users. He is currently working on creating the first Remote Job search engine at Remote Only Engineers: https://remoteonlyengineers.com",
@@ -74,6 +74,96 @@
       "whatYouWillLearn": "An Introduction to CSS will give you all the knowledge you need to start working with Cascading Style Sheets (CSS) and web design. During the course you'll see how to achieve 2 and 3 column layouts with CSS, and learn how to work with the HTML box model and CSS cascade feature. Along the way we'll also be styling text, changing colors, and using the flexibility and power of CSS selectors.",
       "authorImg": "https://pluralsight.imgix.net/author/lg/44cb43b3-83e4-4458-9b39-a7ded3411616.jpg?w=100",
       "id": 5
+    },
+    {
+      "title": "Advanced React.js 17",
+      "subject": "react",
+      "category": "Web development",
+      "creator": "Samer Buna",
+      "duration": "3h 54m",
+      "level": "Advance",
+      "update": "2017-07-17",
+      "rating": "5",
+      "ratingStars": "⭐️⭐️⭐️⭐️⭐️",
+      "about": "Samer Buna is a polyglot coder with years of practical experience in designing, implementing, and testing software, including web and mobile applications development, API design, functional programming, optimization, system administration, databases, and scalability. Samer worked in several industries including real estate, government, education, and publications. Samer has also authored several technical books and online courses about Node.js, React.js, GraphQL, and Ruby on Rails. He is passionate about everything JavaScript, and he loves exploring new libraries. You can follow his latest work over at jsComplete.com and EdgeCoders.com",
+      "whatYouWillLearn": "Have you ever wanted to create full-stack Javascript applications with React.js? This course, Advanced React.js, covers many advanced topics and best practices about React.js. First, you'll learn how to configure and customize full-stack JavaScript environments. Next, you'll explore how to work with async data and manage an application state both internally and externally. Additionally, you'll dive into components context API, and learn how to use it with higher order components, pure components, presentational and container components, and all components lifecycle methods. Finally, you'll discover performance analysis and optimization, how to use immutable data structures, and how to create production builds for both React.js and Node.js. By the end of this course, you'll be able to efficiently use presentational and stateful React components in production.",
+      "authorImg": "https://pluralsight.imgix.net/author/lg/e5c9da13-6fe1-4662-8ee1-5a78800537a3.jpg?w=100",
+      "id": 6
+    },
+    {
+      "title": "Render Agnostic Architecture",
+      "subject": "react",
+      "category": "Software development",
+      "creator": "JavaScript & Friends",
+      "duration": "40m",
+      "level": "Advance",
+      "update": "2018-12-18",
+      "rating": "1",
+      "ratingStars": "⭐️",
+      "about": "The JavaScript and Friends Conference (JS&Friends) is a not-for-profit conference, organized by a team of volunteers. We are all active or aspiring software professionals, and we are excited to bring together a diverse group of JavaScript enthusiasts and friends to learn and network. With this conference, we want to contribute to the cultivation of a welcoming, inclusive, and dynamic tech scene throughout the Midwestern United States, and beyond!",
+      "whatYouWillLearn": "This architecture, as the name implies, allows for writing web applications least dependent on the rendering engine (react, vue, angular, etc.), behavior testing without starting a browser, to collect combined front-back coverage, and, as a side benefit, change the rendering engine in the least expensive way, if needed. It relies heavily on code generation which reduces amount of code to write and support and deals with major flaws of Redux - noizy syntax and performance",
+      "authorImg": "https://pluralsight.imgix.net/author/lg/7d72801a-b59d-4489-930d-d60da4413d25.png?w=100",
+      "id": 7
+    },
+    {
+      "title": "Testing React 16 Applications with Jest 26",
+      "subject": "react",
+      "category": "Software development",
+      "creator": "Daniel Stern",
+      "duration": "3h 36m",
+      "level": "Intermidate",
+      "update": "2018-05-11",
+      "rating": "3",
+      "ratingStars": "⭐️⭐️⭐️",
+      "about": "Daniel Stern is a coder, web developer and programming enthusiast from Toronto, Ontario, where he works as a freelance developer and designer. Daniel has been working with web technologies since the days of the dial-up, and is especially keen on JavaScript, CSS, Angular, React and TypeScript. Over the course of his work as an open-source developer, he's created many community-standards web tools including Angular Audio and Range.CSS. His tool, Range.CSS, was featured in a guest article on CSS-Tricks.com and in CSS Weekly. Daniel also shares his knowledge through speaking, such as in London, England at Full Stack Conf 2014 where he presented a talk on Web Audio and Angular best practices. Videos of Daniel speaking have been featured in such publications as JavaScript Weekly. Daniel lives in Toronto, Ontario and enjoys making electronic music and reading Game of Thrones during the rare times when he isn't writing code.",
+      "whatYouWillLearn": "At the heart of building durable and reliable React applications is a solid understanding of testing, starting with Jest. In this course, Testing React Applications with Jest, you will learn everything you need to do to create solid tests for your React components and applications. First, you’ll learn how to install Jest on any machine, run tests with it via the command line, and integrate it with any Node project. Next, you’ll dive into the various testing techniques, including globals, mocking, and snapshot testing that you can use to make your tests more readable and efficient. Finally, you'll explore how to use all these techniques to test React components and the applications they belong to. When you’re finished with this course, you’ll be able to immediately start writing tests for your React applications, discuss testing strategies and techniques in the workplace, and facilitate development by setting up and configuring Jest.",
+      "authorImg": "https://pluralsight.imgix.net/author/lg/daniel-stern-v2.jpg?w=100",
+      "id": 8
+    },
+    {
+      "title": "AgilePM® Project Management",
+      "subject": "business",
+      "category": "Business professional",
+      "creator": "SPOCE",
+      "duration": "2h 26m",
+      "level": "Intermidate",
+      "update": "2016-05-16",
+      "rating": "3",
+      "ratingStars": "⭐️⭐️⭐️",
+      "about": "SPOCE Project Management is one of the longest standing Accredited Training Organisations in the world for PRINCE2, APM, AgilePM, and MSP to name but a few (1997 - World's first Accredited PRINCE2 course; 2000 - first ever accredited MSP course; 2003 - first Accredited PRINCE2 Practitioner eLearning; 2006 - first Accredited MSP eLearning; ). An APM, APMG, AXELOS, and PeopleCert accredited training organization, SPOCE offers a range of project, program, risk and service management training courses carried out with the use of online eLearning, blended learning, classroom training, and virtual delivery methods, made possible by a network of accredited trainers. Options range from change management, project and program, business analysis, P3M3 Consulting services, and beyond, focusing on the best-practice methods that are highly regarded across the globe.",
+      "whatYouWillLearn": "AgilePM® project management Combines flexibility with proven process for successful agile project delivery. The focus of agile project management is on developing solutions incrementally enabling project teams to react effectively to changing requirements, whilst empowering project personnel and encouraging increased collaboration and ownership. In this course, AgilePM® Project Management, you'll learn about the Agile way of thinking and working, with simple concise communication without excessive documentation. You'll learn the difference between simple lightweight agile approaches, which typically operate at the solution delivery (or 'work package') level and the greater holistic AgilePM® view of how multiple work streams are co-ordinated with the appropriate level of governance and control. This AgilePM® Project Management course is aimed at those wishing to expand their knowledge of traditional project management methods or who are operating in an agile environment running more complex and scalable projects. ",
+      "authorImg": "https://pluralsight.imgix.net/author/lg/ba096766-2cd8-472d-a33b-3b1ac40d6d63.png?w=100",
+      "id": 9
+    },
+    {
+      "title": "Creating AI with Behavior States in Unreal Engine 4",
+      "subject": "creative",
+      "category": "Creative professional",
+      "creator": "Patrick Haslow",
+      "duration": "6h 18m",
+      "level": "Advance",
+      "update": "2017-01-17",
+      "rating": "4",
+      "ratingStars": "⭐️⭐️⭐️⭐️",
+      "about": "Patrick Haslow transitioned from a commercial artist to a game developer, driven by a love of video games and imagination. He has worked extensively in the US and Canada on AAA multiplayer and single player games to craft exciting large and small scale player experiences.",
+      "whatYouWillLearn": "Enemy characters exhibiting believable reactions to the player and their environment in video games is the hallmark of a good play experience. How can this be achieved in a way that works in any gameplay space? In this course, Creating AI with Behavior States in Unreal Engine 4, you will learn how to use the power of Perception, Awareness, and Behavior States to create AI that add to fun game scenarios. You will learn how to create an awareness system that can be adjusted easily to tune the difficulty of enemy encounters. The common AAA development practice of defining predetermined search and patrol areas in-game will also be covered, as will the implementation of AI VO feedback systems and solid debugging techniques to easily read AI stats. An addition of a tactical camera system will even be shown to easily observe your AI in any situation regardless of the game situation. At the conclusion of the course, you will thoroughly understand this AAA approach to enemy encounters in combat and stealth games. Software required: Unreal Engine 4.12",
+      "authorImg": "https://pluralsight.imgix.net/author/lg/055e8b8e-1d09-409c-996e-8aa3afbd76d6.jpeg?w=100",
+      "id": 10
+    },
+    {
+      "title": "SOLIDWORKS Essentials - Simulation XPress",
+      "subject": "manufacturing",
+      "category": "Manufacturing & design",
+      "creator": "Tony Riggs",
+      "duration": "36m",
+      "level": "Beginner",
+      "update": "2016-02-02",
+      "rating": "1",
+      "ratingStars": "⭐️",
+      "about": "As an Elite Applications Engineer at GoEngineer, Tony Riggs specializes in SOLIDWORKS and rapid prototyping. He is a Certified SOLIDWORKS Expert as well as a Certified SOLIDWORKS Instructor. His duties include training, technical support and product demonstrations of SOLIDWORKS and several other products that we carry. Prior to this position he worked as a Mechanical Engineer at FlightSafety International where he helped with the design of flight simulators. He has been using SOLIDWORKS for over 18 years.",
+      "whatYouWillLearn": "This course explores the part level stress analysis tool that is in every seat of SOLIDWORKS. This tool can simulate how a model will react to read world loads and restraints and give you results you can use to guide design decisions about loads, materials, and the model itself. Will something bend? Will it break? Can you save weight or does it need to be thicker? Wouldn't it be great to know this before going into manufacturing or have a failure? This course will show you the steps to analyze the handle on a valve assembly and go from model to results. Software required: SOLIDWORKS.",
+      "authorImg": "https://pluralsight.imgix.net/author/lg/tony-riggs-v1.jpg?w=100",
+      "id": 11
     }
   ],
   "credentials": [
@@ -94,6 +184,24 @@
       "username": "Abhishek@27",
       "password": "Abhishek@27",
       "id": 8
+    },
+    {
+      "email": "AshishKhuKOhad27@gmail.com",
+      "username": "Ashish@K123",
+      "password": "Ashish@K123",
+      "id": 9
+    },
+    {
+      "email": "AshishKhuKOhad27@gmail.com",
+      "username": "Rahul#27",
+      "password": "@12sS234",
+      "id": 10
+    },
+    {
+      "email": "abhishek@gmai.com",
+      "username": "masai@123",
+      "password": "Mmasai@123",
+      "id": 11
     }
   ],
   "posts": [

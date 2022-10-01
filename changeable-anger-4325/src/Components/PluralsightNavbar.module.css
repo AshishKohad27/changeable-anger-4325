@@ -26,6 +26,7 @@
   border-bottom: 3px solid #ec008c;
   /* background-color: lawngreen; */
 }
+
 .block_3 {
   display: flex;
   justify-content: center;
@@ -69,4 +70,37 @@
   color: white;
   border-radius: 0px;
   background-image: linear-gradient(to right,#f05a28,#ec008c,#f05a28);
+}
+.logout>div{
+  /* background-color: #f05a28; */
+  text-align: left;
+  display: flex;
+
+}
+.logout>div>h2,.logout>div>h2>h2{
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.logout>div>h2>h2{
+  margin-left: 5px;
+  font-size: 22x;
+  text-decoration: underline;
+}
+.logout>div>button{
+  width: 82.28px;
+  background-color: #202020;
+  border-radius: 0px;
+}
+.logout>div>button:hover{
+  border-bottom: 2px solid #ec008c;
+  background-color: #202020;
+}
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .contactbtn,.contactbtn1 {
+    /* background-color: red; */
+    display: none;
+  }
 }

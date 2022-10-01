@@ -19,6 +19,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import { MdError } from "react-icons/md";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext/AuthContextProvider";
 
 const intiUsers = {
   username: "",
@@ -29,6 +31,8 @@ export default function Singin() {
   const [signIn, setSignIn] = useState([]);
   const [comparingUsers, setComparingUsers] = useState(intiUsers);
   const toast = useToast();
+  const { isAuth, toggleAuth, isUsers } = useContext(AuthContext);
+  // console.log('isUsers:', isUsers);
 
   const fetchTodosDataAndUpdate = () => {
     axios
@@ -61,19 +65,22 @@ export default function Singin() {
 
     signIn.forEach((ele) => {//warning
       if (ele.username === comparingUsers.username && ele.password === comparingUsers.password) {
-        console.log("i am present username")  ;
+        console.log("i am present username");
         checkingData = true;
+        toggleAuth();
+        isUsers.byPassWord = ele.password;
+        isUsers.byUserName = ele.username;
       }
     });
 
-    console.log("checkingData:", checkingData);
+    // console.log("checkingData:", checkingData);
 
     if (checkingData) {//Successfully logged in
       let color = "green.300";
       let text = "You are Successfully Login";
       let symbol = <BsFillCheckCircleFill fontSize="18px" />
       displayAuthState(color, text, symbol);
-    } 
+    }
     else {//Incoreect logged in
       let color = "red.300";
       let text = "Please fill Correct Credentials";
@@ -192,7 +199,7 @@ export default function Singin() {
               src="https://www.pluralsight.com/content/dam/pluralsight2/login/login-h1.png"
               alt=""
             />
-            <Button>Try for free</Button>
+            {/* <Button>Try for free</Button> */}
           </Box>
 
           <Box>
