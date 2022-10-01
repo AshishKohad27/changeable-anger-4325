@@ -67,6 +67,7 @@ export default function FormData() {
       w="800px"
       templateColumns="repeat(3, 1fr)"
       gap={4}
+      color="blue.300"
     >
       <GridItem colSpan={3} bg="">
         <Heading>Form</Heading>
@@ -101,6 +102,7 @@ export default function FormData() {
             <option>IT ops</option>
             <option>Manufacturing & design</option>
             <option>Information & cyber security</option>
+            <option>Software development</option>
             <option>Web development</option>
           </Select>
         </FormControl>

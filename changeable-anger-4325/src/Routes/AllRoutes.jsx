@@ -9,21 +9,43 @@ import Signup from "../Pages/Signup";
 import Footer from "../Components/Footer";
 import SingleProduct from "../Pages/SingleProduct";
 import PluralsightNavbar from "../Components/PluralsightNvabar";
+import PrivateRoute from "./PrivateRoute";
 
 export default function AllRoutes() {
-    return (
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/signin" element={<Signin />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/contactsale" element={<ContactSale />} />
-            <Route path="/allproduct" element={<AllProduct />} />
-            <Route path="/footer" element={<Footer />} />
-            <Route path="/courses/:data_id" element={<SingleProduct />} />
-            <Route path="/form" element={<FormData />} />
-            <Route path="/footer" element={<Footer />} />
-            <Route path="/pluralsightnavbar" element={<PluralsightNavbar/>} />
-            <Route path="*" element={<PageNotFound />} />
-        </Routes>
-    )
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/signin" element={<Signin />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route
+        path="/contactsale"
+        element={
+          <PrivateRoute>
+            <ContactSale />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/allproduct"
+        element={
+          <PrivateRoute>
+            <AllProduct />
+          </PrivateRoute>
+        }
+      />
+      <Route path="/footer" element={<Footer />} />
+      <Route
+        path="/courses/:data_id"
+        element={
+          <PrivateRoute>
+            <SingleProduct />
+          </PrivateRoute>
+        }
+      />
+      <Route path="/form" element={<FormData />} />
+      <Route path="/footer" element={<Footer />} />
+      <Route path="/pluralsightnavbar" element={<PluralsightNavbar />} />
+      <Route path="*" element={<PageNotFound />} />
+    </Routes>
+  );
 }

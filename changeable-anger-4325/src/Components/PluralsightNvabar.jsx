@@ -23,11 +23,34 @@ import {
     Portal,
     SimpleGrid,
     Text,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+    Input,
+    FormLabel,
+    FormControl,
+    useDisclosure,
+    Modal
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import styles from "./PluralsightNavbar.module.css";
+import React, { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext/AuthContextProvider";
+
 
 export default function PluralsightNavbar() {
+    // isAUTH STATE
+    const { isAuth, toggleAuth, isUsers } = useContext(AuthContext)
+    console.log('isUsers PluralsightNavbar:', isUsers)
+
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const initialRef = React.useRef(null)
+    const finalRef = React.useRef(null)
+
     return (
         <Box m="auto" bg="red.500" maxW={"1348px"} mt="">
 
@@ -48,10 +71,16 @@ export default function PluralsightNavbar() {
                         gap={0}
                         className={styles.block_21}
                     >
-                        <GridItem colSpan={8} bg="">
+                        <GridItem colSpan={{ base: 0, md: 8 }} className={styles.logout} >
                             <Image
 
                             />
+                            {
+                                isAuth ? (<Box >
+                                    <Heading  >Users:- <Heading color="#ec008c">{isUsers.byUserName}</Heading> </Heading>
+                                    <Button onClick={toggleAuth}>Logout</Button>
+                                </Box>) : null
+                            }
                         </GridItem>
 
                         <GridItem
@@ -59,7 +88,8 @@ export default function PluralsightNavbar() {
                             // bg="red.500"
                             className={styles.block_3}
                         >
-                            <Heading fontSize="16px">Pluralsight
+                            <Heading fontSize="16px">
+                                <Link to="/">Pluralsight</Link>
                             </Heading>
                         </GridItem>
 
@@ -68,7 +98,8 @@ export default function PluralsightNavbar() {
                             // bg="red.500"
                             className={styles.block_3}
                         >
-                            <Heading fontSize="16px">Skills
+                            <Heading fontSize="16px">
+                                <Link to="/allproduct">Skills</Link>
                             </Heading>
                         </GridItem>
 
@@ -77,7 +108,7 @@ export default function PluralsightNavbar() {
                             // bg="red.500"
                             className={styles.block_3}
                         >
-                            <Heading fontSize="16px">Flow
+                            <Heading fontSize="16px"><Link to="/allproduct">Flow</Link>
                             </Heading>
 
                         </GridItem>
@@ -88,7 +119,7 @@ export default function PluralsightNavbar() {
                             // bg="red.500"
                             className={styles.block_3}
                         >
-                            <Heading fontSize="16px">Blog
+                            <Heading fontSize="16px"><Link to="/allproduct">Blog</Link>
                             </Heading>
                         </GridItem>
 
@@ -148,19 +179,21 @@ export default function PluralsightNavbar() {
 
                         color="white"
                     >
-                        <GridItem colSpan={2} bg="">
+                        <GridItem colSpan={{ base: 2, md: 2 }} bg="">
                             <Link to="/">
-                            <Image
-                                src="https://www.pluralsight.com/content/dam/ps-nav-assets/product-logo/pluralsight-color-full-logo.png"
-                                alt="logo"
-                            /></Link>
+                                <Image
+                                    src="https://www.pluralsight.com/content/dam/ps-nav-assets/product-logo/pluralsight-color-full-logo.png"
+                                    alt="logo"
+                                /></Link>
                         </GridItem>
                         <GridItem
                             colSpan={1}
                             // bg="red.200"
                             className={styles.block_3}
                         >
-                            <Heading fontSize="16px">Solution</Heading>
+                            <Heading fontSize="16px">
+                                <Link to="/allproduct">Solution</Link>
+                            </Heading>
                         </GridItem>
                         <GridItem
                             colSpan={1}
@@ -176,14 +209,14 @@ export default function PluralsightNavbar() {
                             // bg="red.200"
                             className={styles.block_3}
                         >
-                            <Heading fontSize="16px">Resources</Heading>
+                            <Heading fontSize="16px"><Link to="/allproduct">Resources</Link></Heading>
                         </GridItem>
                         <GridItem
                             colSpan={1}
                             // bg="blue.300"
                             className={styles.block_3}
                         >
-                            <Heading fontSize="16px">Individuals</Heading>
+                            <Heading fontSize="16px"><Link to="/allproduct">Individuals</Link></Heading>
                         </GridItem>
                         <GridItem
                             colSpan={1}
@@ -192,22 +225,63 @@ export default function PluralsightNavbar() {
                         ></GridItem>
 
                         <GridItem
-                            colSpan={2}
+                            colSpan={{ base: 1, md: 2 }}
                             // bg="red.200"
                             className={styles.block_3}
                         >
-                            <Button bg="#202020" colorScheme="white" className={styles.contactbtn}>
-                             <Link to="/contactsale">   Contact Sales</Link>
-                            </Button>
+                            {/* <Button bg="#202020" colorScheme="white" className={styles.contactbtn}>
+                                Contac
+                            </Button> */}
+                            <Button bg="#202020" colorScheme="white" className={styles.contactbtn} onClick={onOpen}>Contact Sales</Button>
+                            <Modal
+                                initialFocusRef={initialRef}
+                                finalFocusRef={finalRef}
+                                isOpen={isOpen}
+                                onClose={onClose}
+                            >
+                                <ModalOverlay />
+                                <ModalContent>
+                                    <ModalHeader>Contact Sales</ModalHeader>
+                                    <ModalCloseButton />
+                                    <ModalBody pb={6} bg="#2b2b2b" color="white">
+                                        <FormControl>
+                                            <FormLabel>First name</FormLabel>
+                                            <Input ref={initialRef} placeholder='First name' />
+                                        </FormControl>
+
+                                        <FormControl mt={4}>
+                                            <FormLabel>Last name</FormLabel>
+                                            <Input placeholder='Last name' />
+                                        </FormControl>
+
+                                        <FormControl mt={4}>
+                                            <FormLabel>Email</FormLabel>
+                                            <Input placeholder='Email' />
+                                        </FormControl>
+
+                                        <FormControl mt={4}>
+                                            <FormLabel>Company Name</FormLabel>
+                                            <Input placeholder='Company Name' />
+                                        </FormControl>
+                                    </ModalBody>
+
+                                    <ModalFooter>
+                                        <Button colorScheme='blue' mr={3} bg="#ec008c   ">
+                                            Submit
+                                        </Button>
+                                        <Button onClick={onClose}>Cancel</Button>
+                                    </ModalFooter>
+                                </ModalContent>
+                            </Modal>
                         </GridItem>
                         <GridItem
-                            colSpan={2}
+                            colSpan={{ base: 1, md: 2 }}
                             // bg="red.200"
                             className={styles.block_3}
                         >
 
                             <Button colorScheme="" backgroundImage="linear-gradient(to right,#f05a28,#ec008c,#f05a28)" className={styles.contactbtn1}>
-                                View Plans
+                                <Link to="/allproduct">View Plans</Link>
                             </Button>
                         </GridItem>
                     </Grid>

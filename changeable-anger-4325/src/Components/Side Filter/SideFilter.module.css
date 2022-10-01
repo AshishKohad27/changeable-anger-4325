@@ -1,0 +1,23 @@
+
+.block_11{
+    font-size: 18px;
+    color:#ffffff;
+    font-weight: bold;
+}
+.block_2{
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+}
+.block_2>button{
+    background-color: #2b2b2b;
+    text-align: left;
+    display: flex;
+    justify-content: start;
+}
+.block_2>button:hover{
+    background-color: #ec08ec;
+    background-image:  linear-gradient(to right,#f05a28,#ec008c,#f05a28);
+}

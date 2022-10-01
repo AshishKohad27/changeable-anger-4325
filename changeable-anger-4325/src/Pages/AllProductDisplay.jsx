@@ -1,20 +1,22 @@
 import {
   Box,
   Button,
-  Divider,
   Heading,
   Image,
   SimpleGrid,
+  Skeleton,
+  Spinner,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import { ImCross } from "react-icons/im";
 import styles from "./CSS/AllProductDisplay.module.css";
-// import { getCourses } from "./AllProductApi";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect, useReducer, useContext } from "react";
 import { BsFillClockFill, BsStarFill } from "react-icons/bs";
 import { NavLink, useSearchParams } from "react-router-dom";
 import axios from "axios";
+import PluralsightReducer from "../Reducer/PluralsightReducer";
+import { Error, Loading, Success } from "../Reducer/PluralsightAction";
+import { FilterContext } from "../Context/DataContext/FilterContextProvider";
 
 const getCurrentPageUrl = (value) => {
   value = Number(value);
@@ -28,33 +30,45 @@ const getCurrentPageUrl = (value) => {
 };
 
 export default function AllProductDisplay({ order, filterD }) {
+  //FilterContext
+  const { isSideFilter } = useContext(FilterContext);
+  // Reducer
+  const [state, dispatch] = useReducer(PluralsightReducer, {
+    loading: false,
+    error: false,
+    success: false,
+  });
+
   const [searchParams, setSearchParams] = useSearchParams();
   const [data, setData] = useState([]);
+  const [resetData, setResetData] = useState([]);
   const [page, setPage] = useState(
     getCurrentPageUrl(searchParams.get("page")) || 1
   );
 
-  const [limit, setLimit] = useState(3);
-  const [sort, setSort] = useState("");
+  const [limit, setLimit] = useState(4);
+  const [sort, setSort] = useState("rating");
 
   const fetchCoursesDataAndUpdate = (page, limit, orderP, sort) => {
+    dispatch(Loading);
     axios
       .get(
         `http://localhost:4325/courses?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}&q=${filterD}`
       )
-      .then((res) => setData(res.data))
-      .catch((err) => console.log("axios", err))
+      .then((res) => {
+        setData(res.data);
+        setResetData(res.data);
+        dispatch(Success);
+      })
+      .catch((err) => {
+        console.log("axios", err);
+        dispatch(Error);
+      })
       .finally(() => console.log(`Call Completed`));
   };
 
   useEffect(() => {
-    fetchCoursesDataAndUpdate(
-      page,
-      limit,
-      order,
-      sort,
-      filterD
-    );
+    fetchCoursesDataAndUpdate(page, limit, order, sort, filterD);
   }, [page, limit, order, sort, filterD]);
 
   useEffect(() => {
@@ -67,22 +81,76 @@ export default function AllProductDisplay({ order, filterD }) {
     });
   }, [page, limit, order, sort, filterD]);
 
+  const SortBaseOnLevel = () => {
+    console.log(isSideFilter.category);
+
+    if (isSideFilter.category === "level") {
+      const dataAfterSortlevel = data.filter(
+        (ele) => ele.level === isSideFilter.value
+      );
+      setData(dataAfterSortlevel);
+    } else if (isSideFilter.category === "category") {
+      const dataAfterSortlevel = data.filter(
+        (ele) => ele.category === isSideFilter.value
+      );
+      setData(dataAfterSortlevel);
+    }
+  };
+  console.log("dataAfterSortlevel:", data);
+  console.log("back of data--->:", resetData);
+
+  const SortBaseOnLevelReset = () => {
+    setData(resetData);
+    isSideFilter.value = "";
+    isSideFilter.category = "";
+  };
+
+  // Loading
+
+  if (state.loading) {
+    // 
+    //working
+    return (
+      // <Box maxW="900px" h="auto" bg="white">
+        <Spinner
+          margin="auto"
+          thickness='4px'
+          speed='0.65s'
+          emptyColor='gray.200'
+          color='blue.500'
+          size='xl'
+        />
+      // </Box>
+    );
+  }
+
   return (
-    <Box>
-      <Box className={styles.block_0}  maxW="857px" 
-        // bg="green.300"
-        >
+    <Box h="auto" bg="">
+
+      <Box className={styles.block_0Filter}>
+        {" "}
+        <Button onClick={SortBaseOnLevel}>Add Filter</Button>
+        <Button onClick={SortBaseOnLevelReset}>
+          {" "}
+          <ImCross /> Clear
+        </Button>
+      </Box>
+      <Box
+        className={styles.block_0}
+        maxW="857px"
+      // bg="green.300"
+      >
         {data.map((ele) => (
           <Box
             key={ele.id}
             w="857px"
-            // maxWidth="857px" 
+            // maxWidth="857px"
             maxW="857px"
             // h="134.98px"
             // bg="teal.500"
             padding="10px"
             paddingLeft="20px"
-            // border="1px solid black"
+          // border="1px solid black"
           >
             <Heading as="h3">{ele.title}</Heading>
             <Text>by {ele.creator}</Text>
@@ -116,7 +184,7 @@ export default function AllProductDisplay({ order, filterD }) {
         ))}
       </Box>
 
-      <Box>
+      <Box className={styles.block_page}>
         <Button disabled={page === 1} onClick={() => setPage(page - 1)}>
           Prev
         </Button>
