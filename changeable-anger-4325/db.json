@@ -202,6 +202,30 @@
       "username": "masai@123",
       "password": "Mmasai@123",
       "id": 11
+    },
+    {
+      "email": "Ashish@gmail.com",
+      "username": "Ashish@1234",
+      "password": "Ashish@1234",
+      "id": 12
+    },
+    {
+      "email": "a@gmial.com",
+      "username": "Ashish@8",
+      "password": "Aa1@ashi",
+      "id": 13
+    },
+    {
+      "email": "kohadashish27@gmail.com",
+      "username": "Ashish@12345",
+      "password": "Aa1#ashi",
+      "id": 14
+    },
+    {
+      "email": "kohadashish27@gmail.com",
+      "username": "Ashish#123",
+      "password": "Ashish#123",
+      "id": 15
     }
   ],
   "posts": [
