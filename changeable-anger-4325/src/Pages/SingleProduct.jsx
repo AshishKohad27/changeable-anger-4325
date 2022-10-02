@@ -28,14 +28,14 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Footer from "../Components/Footer";
-import CourseFAQ from "../Components/SingleProducts/CourseFAQ";
-import TryForFree from "../Components/SingleProducts/TryForFree";
+
 import styles from "./CSS/SingleProduct.module.css";
 import { MdOutlineCategory, MdOutlineSubject } from "react-icons/md";
 import CourseInfo from "../Components/CourseInfo";
 import SkillIQ from "../Components/SingleProducts/SkillIQ";
-// import SkillIQ from "../Components/SingleProducts/SkillIQ";
 import PluralsightReducer from "../Reducer/PluralsightReducer";
+import TryForFree from "../Components/SingleProducts/TryForFree";
+import CourseFAQ from "../Components/SingleProducts/CourseFAQ";
 
 const getData = (url) => {
   return fetch(url).then((res) => res.json());
@@ -116,7 +116,6 @@ export default function SingleProduct() {
           <CourseFAQ />
         </Box>
         <Footer />
-        {/* <TryForFree /> */}
       </Box>
     </Box>
   );
