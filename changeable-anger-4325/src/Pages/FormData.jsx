@@ -40,7 +40,7 @@ export default function FormData() {
 
     axios({
       method: "POST",
-      url: " http://localhost:4325/courses",
+      url: "https://pularsight-json-server.onrender.com/courses",
       data: course,
     }).then((res) => {
       setCourse(intiState);

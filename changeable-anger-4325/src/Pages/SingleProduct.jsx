@@ -46,7 +46,7 @@ export default function SingleProduct() {
   const [coursesDetails, setcoursesDetails] = useState({});
 
   useEffect(() => {
-    getData(`  http://localhost:4325/courses/${data_id}`).then((res) =>
+    getData(`https://pularsight-json-server.onrender.com/courses/${data_id}`).then((res) =>
       setcoursesDetails(res)
     );
   }, []);

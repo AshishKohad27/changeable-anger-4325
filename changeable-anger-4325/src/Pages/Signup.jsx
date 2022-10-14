@@ -140,7 +140,7 @@ export default function Signup() {
 
         axios({
             method: "POST",
-            url: "http://localhost:4325/credentials",
+            url: "https://pularsight-json-server.onrender.com/credentials",
             data: signUp,
         }).then((res) => {
             setSignUp(intiState);

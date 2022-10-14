@@ -226,6 +226,30 @@
       "username": "Ashish#123",
       "password": "Ashish#123",
       "id": 15
+    },
+    {
+      "email": "AshishKhuKOhad27@gmail.com",
+      "username": "Ashish#27123",
+      "password": "Ashish#27123",
+      "id": 16
+    },
+    {
+      "email": "AshishKhuKOhad27@gmail.com",
+      "username": "Ashish$123",
+      "password": "Ashsih$123",
+      "id": 17
+    },
+    {
+      "email": "AshishKhuKOhad27@gmail.com",
+      "username": "Ashish&27",
+      "password": "Ashish&27",
+      "id": 18
+    },
+    {
+      "email": "kohadashish27@gmail.com",
+      "username": "masai@123",
+      "password": "Masai@123",
+      "id": 19
     }
   ],
   "posts": [

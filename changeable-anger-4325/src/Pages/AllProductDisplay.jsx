@@ -53,7 +53,7 @@ export default function AllProductDisplay({ order, filterD }) {
     dispatch(Loading);
     axios
       .get(
-        `http://localhost:4325/courses?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}&q=${filterD}`
+        `https://pularsight-json-server.onrender.com/courses?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}&q=${filterD}`
       )
       .then((res) => {
         setData(res.data);
