@@ -1,0 +1,3 @@
+Logs:https://app.netlify.com/sites/plurasiteashishkohad27/deploys/6349ceead81dce0b9c2fa28a
+
+Website Draft URL: https://6349ceead81dce0b9c2fa28a--plurasiteashishkohad27.netlify.app
